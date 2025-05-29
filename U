@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* カスタムスタイル */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9fafb;
+}
+
+/* iPhone Safari用の最適化 */
+input, select, textarea, button {
+  -webkit-appearance: none;
+  border-radius: 8px;
+}
+
+/* タッチ操作の最適化 */
+button, input, select {
+  touch-action: manipulation;
+}
+
+/* フォーカス時のアウトライン */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* 在庫僅少のアニメーション */
+@keyframes pulse-red {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-red {
+  animation: pulse-red 2s infinite;
+}
+
+/* カスタムスクロールバー (Webkit) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* iOS Safari でのズーム無効化 */
+input[type="text"], 
+input[type="number"], 
+select, 
+textarea {
+  font-size: 16px;
+}
+
+/* タップ時のハイライト無効化 */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ボタンのホバー効果 */
+.btn-hover:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+/* カード要素の影 */
+.card-shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* レスポンシブなテキストサイズ */
+@media (max-width: 640px) {
+  .text-responsive {
+    font-size: 0.875rem;
+  }
+}
+
+/* ダークモード対応 (将来的な拡張用) */
+@media (prefers-color-scheme: dark) {
+  /* ダークモードスタイルはここに追加 */
+}
